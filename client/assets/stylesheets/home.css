@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.avatar {
+    display: block;
+    margin: 20px auto;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: bold;
+}

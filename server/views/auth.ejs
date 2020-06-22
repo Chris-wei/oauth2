@@ -20,14 +20,12 @@
     </div>
     <button class="auth-btn">确认授权</button>
 </div>
+</body>
 <script>
 	window.onload = function () {
-		document.querySelector('.auth-btn').addEventListener('click', () => {
-			fetch('/oauth2/access_token').then(res => res.json()).then(res => {
-				console.log(res);
-			})
+		document.querySelector('.auth-btn').addEventListener('click', function () {
+            window.location.href = `/oauth2/authorize_code${location.search}`
 		}, false)
 	}
 </script>
-</body>
 </html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="../assets/stylesheets/index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <img class="logo" src="../assets/images/logo.png" alt="">
+        <div class="title">程序员联盟</div>
+        <a href="javascript:;" class="x-btn">
+            <img  class="x-logo" src="../assets/images/x-logo.jpg" alt="">
+            <span>使用携程登录</span>
+        </a>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+    	// 回调链接
+    	const redirect_uri = '<%= redirect_uri %>';
+    	// 状态值
+    	const state = '<%= state %>'
+		// 授权链接
+        document.querySelector('.x-btn').addEventListener('click',function () {
+        	window.location.href = `http://localhost:3000/oauth2/authorize?response_type=code&client_id=xc0218ng923jf73&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=get_info&state=${state}`
+		},false)
+	}
+</script>
+</html>
